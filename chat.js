@@ -1,8 +1,4 @@
 import { chat, funcoes } from './inicializaChat.js';
-import { incorporarDocumentos, incorporarPergunta, leArquivos } from './embedding.js';
-
-const arquivos = await leArquivos(["Pacotes_Argentina.txt","Pacotes_EUA.txt", "Politicas.txt"]);
-const documentos = await incorporarDocumentos(arquivos);
 
 export async function executaChat(mensagem) {
   console.log("Tamanho do histórico: " + (await chat.getHistory()).length);
@@ -41,5 +37,5 @@ export async function executaChat(mensagem) {
   } else if (text) {
     return text;
   }
-
+  
 }
